@@ -7,23 +7,59 @@ function About() {
     switch (activeTab) {
       case "Skills":
         return (
-          <div>
-            <h3>Skills</h3>
-            <p>React, JavaScript, HTML, CSS, etc.</p>
+          <div className="text-white" style={{ marginTop: "10px" }}>
+            <ul>
+              <li>
+                <span style={{ color: "red" }}>Technical Skills: </span> • C •
+                C++ • Python • JavaScript • MERN stack
+              </li>
+              <li>
+                <span style={{ color: "red" }}>Other Skills:</span> • Firebase •
+                MySQL
+              </li>
+              <li>
+                <span style={{ color: "red" }}>Coursework:</span> • Database
+                Management Systems • Data Structures and Algorithms •
+                Object-Oriented Programming • Operating Systems • Computer
+                Network
+              </li>
+            </ul>
           </div>
         );
       case "Experience":
         return (
-          <div>
-            <h3>Experience</h3>
-            <p>Web Developer at XYZ Company</p>
+          <div className="text-white" style={{ marginTop: "10px" }}>
+            <ul>
+              <li>
+                Web Development Intern at EPlanet Soft – EP SOFT Pvt. Ltd.
+                <br />
+                <span>SEP 2023 – DEC 2023</span>
+              </li>
+              <li>
+                Member of Technical Team in Apple Developers Group
+                <br />
+                <span>DEC 2021 – present</span>
+              </li>
+            </ul>
           </div>
         );
 
       case "Education":
         return (
-          <div>
-            <h3>Education</h3>
+          <div className="text-white" style={{ marginTop: "10px" }}>
+            <ul>
+              <li>
+                Vellore Institute of Technology, Vellore (B.Tech in Information
+                Technology)
+                <br />
+                <span>Expected July 2025</span>
+              </li>
+              <li>
+                Ryan International School, Jaipur (Secondary Education)
+                <br />
+                <span>2019-2020</span>
+              </li>
+            </ul>
           </div>
         );
       default:
@@ -40,6 +76,7 @@ function About() {
         height: "100vh",
         paddingTop: "20px",
         paddingBottom: "20px",
+        marginBottom: "20px",
       }}
     >
       <div className="row h-100">
@@ -50,10 +87,9 @@ function About() {
             alt="About Image"
             className="img-fluid"
             style={{
-              width: "80%",
-              height: "80%",
+              width: "70%",
+              height: "70%",
               marginLeft: "40px",
-              marginRight: "40px",
             }}
           />
         </div>
@@ -62,58 +98,62 @@ function About() {
         <div className="col-md-6 d-flex align-items-center">
           <div>
             <h2>About Me</h2>
-            <p>
+            <p className="text-wrap">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
               purus feugiat, molestie ipsum et, consectetur justo. Integer
-              tristique odio id elit tempus, vel malesuada est bibendum.
+              tristique odio id elit tempus, vel malesuada est bibendum. Lorem
+              ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec purus
+              feugiat, molestie ipsum et, consectetur justo. Integer tristique
+              odio id elit tempus, vel malesuada est bibendum.
             </p>
             <p>
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
               purus feugiat, molestie ipsum et, consectetur justo. Integer
-              tristique odio id elit tempus, vel malesuada est bibendum.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              purus feugiat, molestie ipsum et, consectetur justo. Integer
-              tristique odio id elit tempus, vel malesuada est bibendum.
-            </p>
-            <p>
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
-              purus feugiat, molestie ipsum et, consectetur justo. Integer
-              tristique odio id elit tempus, vel malesuada est bibendum.
+              tristique odio id elit tempus, vel malesuada est bibendum. Lorem
             </p>
 
             <ul className="nav nav-underline text-white">
               <li className="nav-item">
-                <a
-                  className={`nav-link ${
+                <button
+                  className={`nav-link text-white ${
+                    activeTab === "Education" ? "active" : ""
+                  }`}
+                  onClick={() => setActiveTab("Education")}
+                  style={{
+                    borderBottomColor:
+                      activeTab === "Education" ? "red" : "transparent",
+                  }}
+                >
+                  Education
+                </button>
+              </li>
+              <li className="nav-item">
+                <button
+                  className={`nav-link text-white ${
                     activeTab === "Skills" ? "active" : ""
                   }`}
                   onClick={() => setActiveTab("Skills")}
+                  style={{
+                    borderBottomColor:
+                      activeTab === "Skills" ? "red" : "transparent",
+                  }}
                 >
                   Skills
-                </a>
+                </button>
               </li>
               <li className="nav-item">
-                <a
-                  className={`nav-link ${
+                <button
+                  className={`nav-link text-white ${
                     activeTab === "Experience" ? "active" : ""
                   }`}
                   onClick={() => setActiveTab("Experience")}
+                  style={{
+                    borderBottomColor:
+                      activeTab === "Experience" ? "red" : "transparent",
+                  }}
                 >
                   Experience
-                </a>
-              </li>
-
-              <li className="nav-item">
-                <a
-                  className={`nav-link ${
-                    activeTab === "Education" ? "active" : ""
-                  }`}
-                  onClick={() => setActiveTab("Experience")}
-                >
-                  Experience
-                </a>
+                </button>
               </li>
             </ul>
             {renderContent()}

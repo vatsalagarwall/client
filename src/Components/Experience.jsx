@@ -1,7 +1,7 @@
 import React from "react";
 
 function Experience() {
-  return <div>Experience</div>;
+  return <div style={{ backgroundColor: "black" }}>Experience</div>;
 }
 
 export default Experience;

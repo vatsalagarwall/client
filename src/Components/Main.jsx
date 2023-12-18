@@ -82,7 +82,7 @@ function Main() {
         </div>
       </div>
       <About />
-      <Experience />
+      {/* <Experience /> */}
     </div>
   );
 }
