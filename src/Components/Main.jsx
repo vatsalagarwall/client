@@ -82,6 +82,7 @@ function Main() {
         </div>
       </div>
       <About />
+
       {/* <Experience /> */}
     </div>
   );

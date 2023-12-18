@@ -69,19 +69,12 @@ function About() {
 
   return (
     <div
-      className="container-fluid"
-      style={{
-        backgroundColor: "black",
-        color: "white",
-        height: "100vh",
-        paddingTop: "20px",
-        paddingBottom: "20px",
-        marginBottom: "20px",
-      }}
+      className="container-fluid text-white p-4 "
+      style={{ backgroundColor: "black", height: "100vh" }}
     >
-      <div className="row h-100">
+      <div className="row" style={{ marginTop: "70px" }}>
         {/* Left Column (Image) */}
-        <div className="col-md-6 d-flex align-items-center">
+        <div className="col-md-6" style={{ marginLeft: "10px" }}>
           <img
             src="https://images.unsplash.com/photo-1503023345310-bd7c1de61c7d?q=80&w=1965&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
             alt="About Image"
@@ -95,7 +88,7 @@ function About() {
         </div>
 
         {/* Right Column (Text) */}
-        <div className="col-md-6 d-flex align-items-center">
+        <div className="col-md-6" style={{ marginRight: "-20px" }}>
           <div>
             <h2>About Me</h2>
             <p className="text-wrap">
