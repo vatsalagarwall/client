@@ -48,12 +48,6 @@ function Main() {
                   <Link className="nav-link active me-5 text-white" to="/about">
                     About
                   </Link>
-                  {/* <Link
-                    className="nav-link active me-5 text-white"
-                    to="/services"
-                  >
-                    Services
-                  </Link>{" "} */}
                   <Link
                     className="nav-link active me-5 text-white"
                     to="/contact"
