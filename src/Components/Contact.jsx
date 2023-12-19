@@ -1,6 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
+import axios from "axios";
 function Contact() {
   const [formData, setFormData] = useState({
     name: "",
@@ -16,14 +17,12 @@ function Contact() {
     e.preventDefault();
 
     axios
-      .post("/api/contact", formData) // Replace "/api/contact" with your backend API endpoint
+      .post("http://localhost:8080", formData)
       .then((response) => {
         console.log("Data sent successfully", response.data);
-        // You can handle the response as needed
       })
       .catch((error) => {
         console.error("Error sending data", error);
-        // Handle errors
       });
   };
   return (
@@ -149,8 +148,11 @@ function Contact() {
                 <input
                   type="text"
                   class="form-control"
+                  name="name"
                   id="exampleInputName"
                   aria-describedby="nameHelp"
+                  value={formData.name}
+                  onChange={handleChange}
                 />
               </div>
               <div class="mb-3">
@@ -159,9 +161,12 @@ function Contact() {
                 </label>
                 <input
                   type="email"
+                  name="email"
                   class="form-control"
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
+                  value={formData.email}
+                  onChange={handleChange}
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -174,7 +179,10 @@ function Contact() {
                 <textarea
                   class="form-control"
                   id="exampleMessage"
+                  name="message"
                   rows="3"
+                  value={formData.message}
+                  onChange={handleChange}
                 ></textarea>
               </div>
               <button
