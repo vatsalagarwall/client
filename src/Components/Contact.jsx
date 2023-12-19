@@ -3,27 +3,18 @@ import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
 function Contact() {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    message: "",
-  });
-
-  const handleChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
-  };
+  const [name, setName] = useState();
+  const [email, setEmail] = useState();
+  const [message, setMessage] = useState();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     axios
-      .post("http://localhost:8080", formData)
-      .then((response) => {
-        console.log("Data sent successfully", response.data);
+      .post("http://localhost:5001/", { name, email, message })
+      .then((result) => {
+        console.log(result);
       })
-      .catch((error) => {
-        console.error("Error sending data", error);
-      });
+      .catch((err) => console.log(err));
   };
   return (
     <div
@@ -151,8 +142,7 @@ function Contact() {
                   name="name"
                   id="exampleInputName"
                   aria-describedby="nameHelp"
-                  value={formData.name}
-                  onChange={handleChange}
+                  onChange={(e) => setName(e.target.value)}
                 />
               </div>
               <div class="mb-3">
@@ -165,8 +155,7 @@ function Contact() {
                   class="form-control"
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
-                  value={formData.email}
-                  onChange={handleChange}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -181,8 +170,7 @@ function Contact() {
                   id="exampleMessage"
                   name="message"
                   rows="3"
-                  value={formData.message}
-                  onChange={handleChange}
+                  onChange={(e) => setMessage(e.target.value)}
                 ></textarea>
               </div>
               <button
