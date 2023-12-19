@@ -114,7 +114,7 @@ function Contact() {
           </button>
         </div>
 
-        <div className="col-md-7">
+        <div className="col-md-7 ">
           <div style={{ marginRight: "70px" }}>
             {/* <h2>Contact Me</h2> */}
             <form>
