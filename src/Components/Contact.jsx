@@ -11,7 +11,7 @@ function Contact() {
         className="row"
         style={{ marginTop: "80px", marginBottom: "80px", marginLeft: "40px" }}
       >
-        <div className="col-md-6">
+        <div className="col-md-5">
           <h2>Contact Me</h2>
           <p style={{ color: "white", marginTop: "40px" }}>
             <svg
@@ -114,7 +114,7 @@ function Contact() {
           </button>
         </div>
 
-        <div className="col-md-6">
+        <div className="col-md-7">
           <div style={{ marginRight: "70px" }}>
             {/* <h2>Contact Me</h2> */}
             <form>
