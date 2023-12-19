@@ -141,12 +141,16 @@ function Contact() {
             </a>
           </div>
           <br />
-          <button
-            type="submit"
-            class="btn"
-            style={{ borderColor: "red", color: "white", marginTop: "20px" }}
-          >
-            Download CV
+          <button class="btn" style={{ borderColor: "red", marginTop: "20px" }}>
+            <a
+              className="btn"
+              href="Vatsal_Agarwal_Resume.pdf"
+              download="Vatsal_Agarwal_Resume.pdf"
+              style={{ color: "white" }}
+            >
+              Download CV
+            </a>
+            {/* Download CV */}
           </button>
         </div>
 
