@@ -2,6 +2,30 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 function Contact() {
+  const [formData, setFormData] = useState({
+    name: "",
+    email: "",
+    message: "",
+  });
+
+  const handleChange = (e) => {
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    axios
+      .post("/api/contact", formData) // Replace "/api/contact" with your backend API endpoint
+      .then((response) => {
+        console.log("Data sent successfully", response.data);
+        // You can handle the response as needed
+      })
+      .catch((error) => {
+        console.error("Error sending data", error);
+        // Handle errors
+      });
+  };
   return (
     <div
       className="container-fluid text-white p-4"
@@ -117,7 +141,7 @@ function Contact() {
         <div className="col-md-7 ">
           <div style={{ marginRight: "70px" }}>
             {/* <h2>Contact Me</h2> */}
-            <form>
+            <form onSubmit={handleSubmit}>
               <div class="mb-3">
                 <label for="exampleInputName" class="form-label">
                   Your Name
