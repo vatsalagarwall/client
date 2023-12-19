@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import About from "./About";
 import Projects from "./Projects";
+import Contact from "./Contact";
 const mainStyle = {
   backgroundImage: `url(https://img.freepik.com/free-vector/stream-binary-code-design_53876-97406.jpg)`,
   backgroundSize: "cover",
@@ -77,8 +78,7 @@ function Main() {
       </div>
       <About />
       <Projects />
-
-      {/* <Experience /> */}
+      {/* <Contact /> */}
     </div>
   );
 }
