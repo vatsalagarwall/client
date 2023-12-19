@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import About from "./About";
-import Experience from "./Experience";
+import Projects from "./Projects";
 const mainStyle = {
   backgroundImage: `url(https://img.freepik.com/free-vector/stream-binary-code-design_53876-97406.jpg)`,
   backgroundSize: "cover",
@@ -76,6 +76,7 @@ function Main() {
         </div>
       </div>
       <About />
+      <Projects />
 
       {/* <Experience /> */}
     </div>
