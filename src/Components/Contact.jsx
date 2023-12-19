@@ -2,6 +2,9 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
+// import { toast } from "react-toastify";
+// import "react-toastify/dist/ReactToastify.css";
+
 function Contact() {
   const [name, setName] = useState();
   const [email, setEmail] = useState();
@@ -13,8 +16,12 @@ function Contact() {
       .post("http://localhost:5001/", { name, email, message })
       .then((result) => {
         console.log(result);
+        // toast("Data sent successfully");
       })
-      .catch((err) => console.log(err));
+      .catch((err) => {
+        console.log(err);
+        // toast.error("Error sending data");
+      });
   };
   return (
     <div
