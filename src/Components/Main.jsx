@@ -12,7 +12,7 @@ const mainStyle = {
 
 function Main() {
   return (
-    <div>
+    <div style={{ backgroundColor: "black" }}>
       <div style={mainStyle}>
         <div
           className="container d-flex flex-column align-items-center vh-100"
@@ -78,7 +78,7 @@ function Main() {
       </div>
       <About />
       <Projects />
-      {/* <Contact /> */}
+      <Contact />
     </div>
   );
 }
