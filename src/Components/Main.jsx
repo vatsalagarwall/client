@@ -31,6 +31,7 @@ function Main() {
                 aria-controls="navbarNavAltMarkup"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
+                style={{ border: "none", color: "white" }}
               >
                 <span className="navbar-toggler-icon"></span>
               </button>
@@ -38,14 +39,14 @@ function Main() {
                 className="collapse navbar-collapse "
                 id="navbarNavAltMarkup"
               >
-                <div className="navbar-nav ms-auto">
-                  <Link
+                <div className="navbar-nav ms-auto heading-next">
+                  {/* <Link
                     className="nav-link active me-5 text-white"
                     aria-current="page"
                     to="/"
                   >
                     Home
-                  </Link>
+                  </Link> */}
                   <Link className="nav-link active me-5 text-white" to="/about">
                     About
                   </Link>
@@ -69,9 +70,11 @@ function Main() {
             className="text-center"
             style={{ marginTop: "auto", marginBottom: "auto" }}
           >
-            <p>Software and Web Development Enthusiast</p>
-            <h1>
-              Hi, I'm <span>Vatsal </span>Agarwal
+            <p className="heading-next">
+              Software and Web Development Enthusiast
+            </p>
+            <h1 className="heading">
+              Hi, I'm <span style={{ color: "red" }}>Vatsal Agarwal</span>
             </h1>
           </div>
         </div>

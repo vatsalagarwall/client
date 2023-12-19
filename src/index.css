@@ -1,3 +1,11 @@
 body {
   font-family: "Poppins", sans-serif;
 }
+
+.heading {
+  font-size: 60px;
+}
+
+.heading-next {
+  font-size: 20px;
+}

@@ -2,8 +2,8 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import axios from "axios";
-// import { toast } from "react-toastify";
-// import "react-toastify/dist/ReactToastify.css";
+import { toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 function Contact() {
   const [name, setName] = useState();
@@ -16,11 +16,26 @@ function Contact() {
       .post("http://localhost:5001/", { name, email, message })
       .then((result) => {
         console.log(result);
-        // toast("Data sent successfully");
+        // alert("hello");
+        toast.success("Data sent successfully", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       })
       .catch((err) => {
         console.log(err);
-        // toast.error("Error sending data");
+        toast.error("Error submitting data", {
+          position: "top-right",
+          autoClose: 1000,
+          hideProgressBar: false,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+        });
       });
   };
   return (
@@ -33,7 +48,7 @@ function Contact() {
         style={{ marginTop: "80px", marginBottom: "80px", marginLeft: "40px" }}
       >
         <div className="col-md-5">
-          <h2>Contact Me</h2>
+          <h2 className="heading">Contact Me</h2>
           <p style={{ color: "white", marginTop: "40px" }}>
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -150,6 +165,7 @@ function Contact() {
                   id="exampleInputName"
                   aria-describedby="nameHelp"
                   onChange={(e) => setName(e.target.value)}
+                  required
                 />
               </div>
               <div class="mb-3">
@@ -163,6 +179,7 @@ function Contact() {
                   id="exampleInputEmail"
                   aria-describedby="emailHelp"
                   onChange={(e) => setEmail(e.target.value)}
+                  required
                 />
                 <div id="emailHelp" class="form-text">
                   We'll never share your email with anyone else.
@@ -178,6 +195,7 @@ function Contact() {
                   name="message"
                   rows="3"
                   onChange={(e) => setMessage(e.target.value)}
+                  required
                 ></textarea>
               </div>
               <button

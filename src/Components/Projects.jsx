@@ -11,7 +11,7 @@ function Projects() {
         className="container"
         style={{ marginTop: "60px", marginBottom: "60px" }}
       >
-        <h1>My works</h1>
+        <h1 className="heading">My works</h1>
         <div className="row">
           {data.map((item, index) => (
             <div

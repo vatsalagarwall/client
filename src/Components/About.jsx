@@ -119,7 +119,7 @@ function About() {
 
         <div className="col-md-6">
           <div style={{ marginRight: "70px" }}>
-            <h2>About Me</h2>
+            <h2 className="heading">About Me</h2>
             <p className="text-wrap">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec
               purus feugiat, molestie ipsum et, consectetur justo. Integer
